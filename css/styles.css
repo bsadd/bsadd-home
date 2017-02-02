@@ -58,7 +58,6 @@ h3.highlight  {
 }
 
 .navbar {
-	background-color:#ff3333;
   	color:#ffffff;
     border:0;
   	border-radius:0;
@@ -131,8 +130,6 @@ h3.highlight  {
 }
 
 #banner{
-	width: 1140px;
-	/* background-image: url("header-clip.jpg"); */
 	background-image: url("http://cse.buet.ac.bd/images/menuback2.gif");
 	
 	background-repeat: repeat;
