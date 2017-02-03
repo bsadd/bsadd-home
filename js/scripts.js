@@ -22,4 +22,7 @@ $(document).ready(function(){
             });
         }
     });
+
+    $('.photo-album').lightGallery();
+
 });

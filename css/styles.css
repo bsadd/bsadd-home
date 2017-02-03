@@ -25,6 +25,10 @@ header {
   }
 }
 
+div.photo-album a img {
+    width: 100px;
+}
+
 .affix,.affix-top {
    position:static;
 }
