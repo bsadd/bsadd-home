@@ -1,7 +1,7 @@
 /* bootstrap 3 helpers */
 
 .navbar-form input, .form-inline input {
-	width:auto;
+    width:auto;
 }
 
 /* end */
@@ -9,15 +9,15 @@
 /* custom theme */
 
 header {
-	min-height:180px;
-  	margin-bottom:5px;
+    min-height:180px;
+    margin-bottom:5px;
 }
 
 @media (min-width: 979px) {
   #sidebar.affix-top {
       position: static;
   }
-  
+
   #sidebar.affix {
       position: fixed;
       top: 0;
@@ -37,51 +37,51 @@ body {
 }
 
 a,a:hover {
-	color:#ff3333;
-  	text-decoration:none;
+    color:#ff3333;
+    text-decoration:none;
 }
 
 .highlight-bk {
-	background-color:#ff3333;
+    background-color:#ff3333;
     padding:1px;
     width:100%;
 }
 
 .highlight {
-	color:#ff3333;
+    color:#ff3333;
 }
-  
+
 h3.highlight  {
-	padding-top:13px;
+    padding-top:13px;
     padding-bottom:14px;
-  	border-bottom:2px solid #ff3333;
+    border-bottom:2px solid #ff3333;
 }
 
 .navbar {
-  	color:#ffffff;
+    color:#ffffff;
     border:0;
-  	border-radius:0;
+    border-radius:0;
 }
 .navbar-nav > li > a {
-  	color:#fff;
-  	padding-left:20px;
-  	padding-right:20px;
-  	border-left:1px solid #ee3333;
+    color:#fff;
+    padding-left:20px;
+    padding-right:20px;
+    border-left:1px solid #ee3333;
 }
 .navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
-    color:#666666; 
+    color:#666666;
 }
 .navbar-nav > li:last-child > a {
-  	border-right:1px solid #ee3333;
+    border-right:1px solid #ee3333;
 }
 .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
     color: #ffffff;
-	background-color:transparent;
+    background-color:transparent;
 }
 .navbar-nav > .open > a, .navbar-nav > .open > a:hover, .navbar-nav > .open > a:focus {
-	color: #f0f0f0;
-	background-color:transparent;
-  	opacity:.9;
+    color: #f0f0f0;
+    background-color:transparent;
+    opacity:.9;
     border-color:#ff3333;
 }
 
@@ -91,32 +91,32 @@ h3.highlight  {
 }
 
 .accordion-group {
-	border-width:0;
+    border-width:0;
 }
 
 .dropdown-menu {
-	min-width: 250px;
+    min-width: 250px;
 }
 
 .accordion-heading .accordion-toggle, .accordion-inner, .nav-stacked li > a {
-	padding-left:1px;
+    padding-left:1px;
 }
 
 .caret {
-	color:#fff;
+    color:#fff;
 }
 
 .navbar-toggle {
-	color:#fff;
+    color:#fff;
     border-width:0;
 }
-  
+
 .navbar-toggle:hover {
-	background-color:#fff;
+    background-color:#fff;
 }
 
 .panel {
-	padding-left:27px;
+    padding-left:27px;
     padding-right:27px;
 }
 
@@ -124,23 +124,23 @@ h3.highlight  {
 
 
 .content-panel{
-	min-height: 450px;
-	display: block;
-	padding-bottom: 50px;
+    min-height: 450px;
+    display: block;
+    padding-bottom: 50px;
 }
 
 #banner{
-	background-image: url("http://cse.buet.ac.bd/images/menuback2.gif");
-	
-	background-repeat: repeat;
+    background-image: url("http://cse.buet.ac.bd/images/menuback2.gif");
+
+    background-repeat: repeat;
 }
 
 .slider-c1{
-	position: relative; top: 0px; left: 0px; width: 100%; height: 500px;
+    position: relative; top: 0px; left: 0px; width: 100%; height: 500px;
 }
 
 .slider-c2{
-	cursor: move; position: absolute; overflow: hidden; left: 0px; top: 0px; width: 100%; height: 500px;
+    cursor: move; position: absolute; overflow: hidden; left: 0px; top: 0px; width: 100%; height: 500px;
 }
 
 
@@ -154,14 +154,14 @@ h3.highlight  {
 .jssora01r.jssora01rdn      (mousedown)
 */
 .jssora01l, .jssora01r {
-	display: block;
-	position: absolute;
-	/* size of arrow element */
-	width: 45px;
-	height: 45px;
-	cursor: pointer;
-	background: url('a01.png') no-repeat;
-	overflow: hidden;
+    display: block;
+    position: absolute;
+    /* size of arrow element */
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    background: url('a01.png') no-repeat;
+    overflow: hidden;
 }
 .jssora01l { background-position: -8px -38px; top: 123px;  left: 8px;}
 .jssora01r { background-position: -68px -38px; top: 123px;  right: 8px;}
