@@ -23,6 +23,11 @@ $(document).ready(function(){
         }
     });
 
-    $('.photo-album').lightGallery();
+    $('.photo-album').each(function(){
+        $(this).lightGallery({
+            download: false,
+            galleryId: $(this).attr('id')
+        });
+    });
 
 });

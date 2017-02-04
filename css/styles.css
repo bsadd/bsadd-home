@@ -25,8 +25,12 @@ header {
   }
 }
 
+div.photo-album {
+    margin-bottom: 100px;
+}
+
 div.photo-album a img {
-    width: 100px;
+    width: 150px;
 }
 
 .affix,.affix-top {
