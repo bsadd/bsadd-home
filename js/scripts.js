@@ -23,6 +23,12 @@ $(document).ready(function(){
         }
     });
 
+    $('#sidebar li a').click(function(){
+        var anchor = $(this).attr('href').substr(1);
+        scrollToElement( $('#'+anchor).prev().prev() );
+        return false;
+    });
+
     $('.photo-album').each(function(){
         $(this).lightGallery({
             download: false,
@@ -31,3 +37,9 @@ $(document).ready(function(){
     });
 
 });
+
+function scrollToElement( $element , time = 500, success ){ 
+    $('html, body').animate({
+        scrollTop: $element.offset().top
+    }, time , success ); 
+}
