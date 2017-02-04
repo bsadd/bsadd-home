@@ -23,16 +23,10 @@ $(document).ready(function(){
         }
     });
 
-    $('#sidebar li a').click(function(){
-        var anchor = $(this).attr('href').substr(1);
-        scrollToElement( $('#'+anchor).prev().prev() );
-        return false;
-    });
-
     $('.photo-album').each(function(){
         $(this).lightGallery({
             download: false,
-            galleryId: $(this).attr('id')
+            galleryId: $(this).parent().attr('id')
         });
     });
 
