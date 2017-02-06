@@ -33,6 +33,11 @@ div.photo-album a img {
     width: 150px;
 }
 
+img.userphoto {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
 .affix,.affix-top {
    position:static;
 }
