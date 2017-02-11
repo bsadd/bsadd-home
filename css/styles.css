@@ -8,6 +8,10 @@
 
 /* custom theme */
 
+table#activities-table tr td:first-child {
+    width: 150px;
+}
+
 header {
     min-height:180px;
     margin-bottom:5px;
