@@ -107,6 +107,10 @@
                     <div id="post-index-container">
                     </div>
 
+                    <p>More posts are coming...</p>
+
+                    <hr/>
+                    <ul class="pager"><li><a class="show-fb-comment" href="">Comments</a></li></ul>
                     <div class="fb-comments" data-href="." data-numposts="5" data-width="100%"></div>
 
 
@@ -120,7 +124,11 @@
                     <div class="post-content"></div>
 
                     <hr/>
-                    <ul class="pager"><li><a href=".">Go to all blogs</a></li></ul>
+                    <ul class="pager pull-right">
+                        <li><a class="show-fb-comment" href="">Comments</a></li>
+                        <li><a href=".">Go to all blogs</a></li>
+                    </ul>
+                    <div class="fb-comments" data-href="." data-numposts="5" data-width="100%"></div>
                 </div>
             </div>
         </div>
@@ -138,6 +146,12 @@ $(function(){
     }else{
         loadAllPosts();
     }
+    $('.fb-comments').attr('data-href' , window.location.href );
+
+    $('.show-fb-comment').click(function(){
+        loadFacebookCommentBox();
+        return false;
+    });
 });
 
 function loadAllPosts(){
