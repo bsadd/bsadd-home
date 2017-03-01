@@ -11,6 +11,42 @@
 
         <link href="../css/styles.css" rel="stylesheet">
         <script>
+
+            function urlParam(name){
+                var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+                if (results==null){
+                   return null;
+                }else{
+                   return results[1] || 0;
+                }
+            };
+
+            var allPosts = [
+                {
+                    id      : 1,
+                    title   : "Memoir to my younger self",
+                    author  : "K M Sabidur Rahman",
+                    authorPosition  : "MS, PhD Student, CS, UC Davis",
+                    authorUrl       : "https://www.linkedin.com/in/kmsabidurrahman",
+                    batch   : "05"
+                }
+            ];
+            var post;
+
+            var postId = urlParam('postid');
+            if( postId && postId.trim() ) {
+                postId = postId.trim();
+
+                //A super efficient way to find post by id. Since posts are maintained manually and currently too less, this will suffice
+                for(var i=0;i<allPosts.length;i++){
+                    if( allPosts[i].id == postId ){
+                        post = allPosts[i];
+                        document.title = 'BSADD Blog - ' + post.title;
+                        break;
+                    }
+                }
+            }
+
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -47,15 +83,20 @@
                 </div>
             </div>
 
-            <div class="row" id="all-post-container">
+            <div class="row">
                 <div class="col-xs-3">
                     <div id="sidebar">
                         <ul id="nav-items" class="nav nav-stacked">
-                            <li><h3 class="highlight"> <a href="">BSADD Blog </a> <i class="glyphicon glyphicon-dashboard pull-right"></i></h3></li>
+                            <li><h3 class="highlight"> <a href=".">BSADD Blog </a> <i class="glyphicon glyphicon-dashboard pull-right"></i></h3></li>
                         </ul>
+                        --
+                        <p>
+                            <a class="post-author" target="_blank" href="."></a><br/>
+                            <span class="post-author-position"></span>
+                        </p>
                     </div>
                 </div>
-                <div class="col-xs-9 panel content-panel">
+                <div id="all-post-container" class="col-xs-9 panel content-panel hidden text-justify">
                     <h2></h2>
                     <p>We believe that we have a lot to learn from our alumni. We have a strong network and they are all working great in different places. We have also freshers coming out from buet every year (yeah, it's regular now). A simple thought came as a flash, that if we could've connected all those wise minds with the young-energetic minds, some good must happen. And that resulted this page. </p>
                     <p>We asked our alumni to write something for our juniors. It's hard for people to make time within their busy schedules. But we <a href="https://www.facebook.com/groups/341677349195065/permalink/1531865696842885/">tried</a>, and <a href="https://www.facebook.com/groups/341677349195065/permalink/1556539564375498/">tried harder</a>. And we can say with a great joy, that they did write something. Actually they wrote a lot. On this page, we will be publishing those writings sequentially.
@@ -66,10 +107,20 @@
                     <div id="post-index-container">
                     </div>
 
+                    <div class="fb-comments" data-href="." data-numposts="5" data-width="100%"></div>
+
 
                     <div id="sample-index-container" class="hidden alert alert-info">
                         <a class="post-name" href=""></a> - <span class="post-author"></span>
                     </div>
+                </div>
+
+                <div id="single-post-container" class="col-xs-9 panel content-panel hidden text-justify">
+                    <p class="h2 post-title"></p><hr/>
+                    <div class="post-content"></div>
+
+                    <hr/>
+                    <ul class="pager"><li><a href=".">Go to all blogs</a></li></ul>
                 </div>
             </div>
         </div>
@@ -80,42 +131,55 @@
         <script src="../js/bootstrap.min.js"></script>
         <script src="../js/scripts.js"></script>
         <script type="text/javascript">
-var allPosts = [
-    {
-        id      : "1",
-        title   : "Memoir to my younger self",
-        author  : "K M Sabidur Rahman",
-        batch   : "05"
-    }
-];
 
 $(function(){
-    var postId = $.urlParam('postid');
-    if( postId && postId.trim() ) {
-        postId = postId.trim();
-        console.log( 'Loading single post - ' + postId);
-        loadSinglePost();
+    if( post ){
+        loadSinglePost(post);
     }else{
         loadAllPosts();
     }
 });
 
 function loadAllPosts(){
+    $('#all-post-container').removeClass('hidden').addClass('show');
+
     for(var i=0;i<allPosts.length;i++){
         var post = allPosts[i];
         $blogComponent = $('#sample-index-container');
         $blogComponent.removeAttr('id');
         $blogComponent.removeClass('hidden').addClass('show');
-        $blogComponent.find('.post-name').attr('href' , '?postid='+post.id);
+        $blogComponent.find('.post-name').attr('href' , getPostUrl(post.id) );
         $blogComponent.find('.post-name').text( post.title.substr(0,50) );
         $blogComponent.find('.post-author').text( post.author );
         $('#post-index-container').append($blogComponent);
     }
 }
 
-function loadSinglePost(){
-
+function getPostUrl(postId){
+    return '?postid='+postId;
 }
+
+function getPostContentUrl(postId){
+    postId = ('000'+postId).slice(-3);
+    return 'posts/'+postId + '.html';
+}
+
+function loadSinglePost(post){
+    $singlePostElement = $('#single-post-container');
+    $singlePostElement.removeClass('hidden').addClass('show');
+
+    $singlePostElement.find('.post-title').text( post.title ) ;
+
+    var postUrl = getPostContentUrl(post.id);
+    $singlePostElement.find('.post-content').load( postUrl );
+
+    $('.post-author').text( post.author );
+    $('.post-author').attr( 'href' , post.authorUrl );
+    $('.post-author-position').text( post.authorPosition );
+}
+
+
+
         </script>
     </body>
 </html>
