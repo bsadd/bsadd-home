@@ -23,12 +23,39 @@
 
             var allPosts = [
                 {
-                    id      : 1,
-                    title   : "Memoir to my younger self",
-                    author  : "K M Sabidur Rahman",
+                    id              : 1,
+                    title           : "Memoir to my younger self",
+                    author          : "K M Sabidur Rahman",
                     authorPosition  : "MS, PhD Student, CS, UC Davis",
                     authorUrl       : "https://www.linkedin.com/in/kmsabidurrahman",
-                    batch   : "05"
+                    batch           : "05"
+                }
+                ,{
+                    id              : 2,
+                    title           : "গরু রচনা",
+                    author          : "Md Imran Hasan Hira",
+                    authorPosition  : "Software Developer, Booking.com B.V.",
+                    authorUrl       : "https://www.linkedin.com/in/imranhasanhira/",
+                    batch           : "07",
+                    inactive        : 1
+                }
+                ,{
+                    id              : 3,
+                    title           : "Early search begins with beginner's luck",
+                    author          : "Maksud Alam Chowdhury",
+                    authorPosition  : "Software Engineer, ZS Solutions Ltd.",
+                    authorUrl       : "",
+                    batch           : "08",
+                    inactive        : 1
+                }
+                ,{
+                    id              : 1000,
+                    title           : "",
+                    author          : "",
+                    authorPosition  : "",
+                    authorUrl       : "",
+                    batch           : "",
+                    inactive        : 1
                 }
             ];
             var post;
@@ -160,6 +187,7 @@ function loadAllPosts(){
 
     for(var i=0;i<allPosts.length;i++){
         var post = allPosts[i];
+        if( post.inactive ) continue;
         $blogComponent = $('#sample-index-container');
         $blogComponent.removeAttr('id');
         $blogComponent.removeClass('hidden').addClass('show');
