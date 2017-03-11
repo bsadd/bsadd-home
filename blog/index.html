@@ -28,7 +28,7 @@
                     author          : "K M Sabidur Rahman",
                     authorPosition  : "MS, PhD Student, CS, UC Davis",
                     authorUrl       : "https://www.linkedin.com/in/kmsabidurrahman",
-                    batch           : "05"
+                    authorBatch     : "05"
                 }
                 ,{
                     id              : 2,
@@ -36,7 +36,7 @@
                     author          : "Md Imran Hasan Hira",
                     authorPosition  : "Software Developer, Booking.com B.V.",
                     authorUrl       : "https://www.linkedin.com/in/imranhasanhira/",
-                    batch           : "07",
+                    authorBatch     : "07",
                     inactive        : 1
                 }
                 ,{
@@ -44,9 +44,8 @@
                     title           : "Early search begins with beginner's luck",
                     author          : "Maksud Alam Chowdhury",
                     authorPosition  : "Software Engineer, ZS Solutions Ltd.",
-                    authorUrl       : "",
-                    batch           : "08",
-                    inactive        : 1
+                    authorUrl       : "https://www.linkedin.com/in/maksudc",
+                    authorBatch     : "08",
                 }
                 ,{
                     id              : 1000,
@@ -130,7 +129,6 @@
                         <p>We asked our alumni to write something for our juniors. It's hard for people to make time within their busy schedules. But we <a href="https://www.facebook.com/groups/341677349195065/permalink/1531865696842885/">tried</a>, and <a href="https://www.facebook.com/groups/341677349195065/permalink/1556539564375498/">tried harder</a>. And we can say with a great joy, that they did write something. Actually they wrote a lot. On this page, we will be publishing those writings sequentially.
                         </p>
 
-                        <p>Here goes our first post - </p>
 
                         <div id="post-index-container">
                         </div>
@@ -187,13 +185,14 @@ function loadAllPosts(){
 
     for(var i=0;i<allPosts.length;i++){
         var post = allPosts[i];
+        console.log( post.inactive );
         if( post.inactive ) continue;
-        $blogComponent = $('#sample-index-container');
+        $blogComponent = $('#sample-index-container').clone();
         $blogComponent.removeAttr('id');
         $blogComponent.removeClass('hidden').addClass('show');
         $blogComponent.find('.post-name').attr('href' , getPostUrl(post.id) );
         $blogComponent.find('.post-name').text( post.title.substr(0,50) );
-        $blogComponent.find('.post-author').text( post.author );
+        $blogComponent.find('.post-author').text( post.author + " '" + post.authorBatch );
         $('#post-index-container').append($blogComponent);
     }
 }
