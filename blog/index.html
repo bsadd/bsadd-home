@@ -199,7 +199,7 @@ function loadAllPosts(){
         $blogComponent.removeAttr('id');
         $blogComponent.removeClass('hidden').addClass('show');
         $blogComponent.find('.post-name').attr('href' , getPostUrl(post.id) );
-        $blogComponent.find('.post-name').text( post.title.substr(0,50) );
+        $blogComponent.find('.post-name').text( post.title );
         $blogComponent.find('.post-author').text( getPostAuthorBatch( post ) );
         $('#post-index-container').append($blogComponent);
     }
