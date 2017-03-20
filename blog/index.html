@@ -45,7 +45,15 @@
                     author          : "Maksud Alam Chowdhury",
                     authorPosition  : "Software Engineer, ZS Solutions Ltd.",
                     authorUrl       : "https://www.linkedin.com/in/maksudc",
-                    authorBatch     : "08",
+                    authorBatch     : "08"
+                }
+                ,{
+                    id              : 4,
+                    title           : "Timetravel - How to work after deadline, and submit it before deadline",
+                    author          : "মোঃ তানজীম হোসেন সিফাত",
+                    authorPosition  : "Senior Software Engineer, Reve Systems Ltd",
+                    authorUrl       : "https://www.linkedin.com/in/tanjimhossainsifat",
+                    authorBatch           : "08"
                 }
                 ,{
                     id              : 1000,
@@ -53,7 +61,7 @@
                     author          : "",
                     authorPosition  : "",
                     authorUrl       : "",
-                    batch           : "",
+                    authorBatch     : "",
                     inactive        : 1
                 }
             ];
@@ -192,13 +200,17 @@ function loadAllPosts(){
         $blogComponent.removeClass('hidden').addClass('show');
         $blogComponent.find('.post-name').attr('href' , getPostUrl(post.id) );
         $blogComponent.find('.post-name').text( post.title.substr(0,50) );
-        $blogComponent.find('.post-author').text( post.author + " '" + post.authorBatch );
+        $blogComponent.find('.post-author').text( getPostAuthorBatch( post ) );
         $('#post-index-container').append($blogComponent);
     }
 }
 
 function getPostUrl(postId){
     return '?postid='+postId;
+}
+
+function getPostAuthorBatch( post ){
+    return post.author + " '" + post.authorBatch;
 }
 
 function getPostContentUrl(postId){
@@ -215,7 +227,7 @@ function loadSinglePost(post){
     var postUrl = getPostContentUrl(post.id);
     $singlePostElement.find('.post-content').load( postUrl );
 
-    $('.post-author').text( post.author );
+    $('.post-author').text( getPostAuthorBatch( post ) );
     $('.post-author').attr( 'href' , post.authorUrl );
     $('.post-author-position').text( post.authorPosition );
 }
