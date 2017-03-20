@@ -1,0 +1,54 @@
+<p>(Disclaimer: I do not consider myself as an expert. So the following should be considered as personal opinion, instead of an expert's opinion)</p>
+
+<p>It was back in 2009. I just started working as a software developer in a casual game development company. At that time I was working on a strategy game for iOS devices. The game was very typical in nature, i.e. it contained lots of screens, texts, images, animation etc. I was almost done with the project. Few days before the release our product manager sent his final feedback, something like this:</p>
+
+<blockquote>Everything in the game looks okay to me. There is only one change you need to make. The white texts are hurting the eyes too much. Please make them 90% grey. Should be a very simple change.</blockquote>
+
+<p>Yes, it should have been a very simple one line change of a color value ... <i>only if I knew how to write manageable and extendable code</i>. It came to a horror to me. Why? Because there were literally hundreds of text fields across dozens of screens and I made the grave mistake of configuring their text properties separately. There was no factory method, no common configuration file, nothing. I had to change in hundreds of places, made a number of bugs while doing that and took around two weeks to finish. And while doing it I was hoping that the product manager won't ask to change the color again.</p>
+
+<p>A hard lesson was learned. I didn't know exactly what should have I done, but I was sure that I didn't know much about the design, architecture of code. The next things I did was to take <a href="https://www.goodreads.com/book/show/85009.Design_Patterns" target="_blank">Design Patterns</a> by famous Gang of Four Erich Gamma, Ralph Johnson, John Vlissides, Richard Helm out of my book shelf and started reading it from the first page.</p>
+
+<p>It was a difficult read. No, wait ... it was a terrible read. In fact it is one of the most complex books that I have ever read till today. It took me around one complete year to read and digest it completely. And it was fun. It is one the best books that I have ever read till today. Now, what I gained from it? Did it make me an excellent software designer? Did it teach me all the secrets of software architecture?</p>
+
+<p>No, definitely not. There is no single book that can teach you everything.</p>
+
+<p>But it changed my life as a software developer. It taught me a number of things that should be kept in mind. It taught me about some common problems and their solutions. And most importantly it taught me the necessity of a good software design. Only after feeling the pain of bad design, only after facing the horror of bad design I really started to appreciate the importance of good design.</p>
+
+<p><i>And it saved me from a number of future disasters.</i></p>
+
+<br/>
+
+<h4>Good Design, huh!! What we want is the code that works!</h4>
+
+<p>This is typical, not only among product managers, rather among developers too. We only think about the code that gets our job done. After all, who cares about the design and architecture when the code gets the job done? Unfortunately, this idea of getting the job done with bad code is an illusion. <i>The job is actually not done</i>. Unless the job is simple hello world bad code will never get the job done. They will only lead to more bugs, will only make it harder, even impossible, to adopt new changes in requirement (remember, there is no such thing as the </strong>last requirement</strong>) and eventually it will take more time to finish and release the product.</p>
+
+<p>However, it is a very common tendency to overlook the necessity of good architecture and design before writing any code.</p>
+
+<p>In the last eight years I have seen many good codes with good designs ... some really excellent ones. I saw some codes that generate multiple class files in different languages along with DB operations from JSON files (codes writing more codes, huh!) or I watched the refactoring of one large monolithic giant into a number of microservices.</p>
+
+<p>And I have seen bad codes ... some terrible nightmares. I can talk about a single function that controlled a thread, read data from file, configured networks parameters, made HTTP calls, parsed the response string, did all sorts of error handlings and many more ... all inside a <strong>single horrible function</strong> that took several hundred lines. When we needed to reuse some functionality from it in other places, we eventually had to rewrite everything from scratch.</p>
+
+<p>In his book <a href="https://www.goodreads.com/book/show/22500735-programming" target="_blank">Programming: Principles and Practice Using C++</a> Bjarne Stroustrup, the creator of C++, commented that without good design and structure we will only get expensive messes. He compared writing code without structure with building with mud bricks. A building can be done with mud bricks but we won't be able to get to fifth floor since mud bricks lack the structural strength for it. So if we want to build something good we have to think about the design and architecture.</p>
+
+<blockquote>The design and architecture part of a software is not a luxury, it is a necessity.</blockquote>
+
+<br/>
+<h4>And at the End, Depth Knowledge Matters!</h4>
+
+<p>This incident happened few months ago. I was reviewing some codes. There was a very typical and simple function. However, there were some checks and parameters which looked redundant to me. The function was also recursive, I wanted a non-recursive one. I asked the developer who wrote the code. And to my surprise he couldn't answer why the parameters and checks were needed. Also he seemed to have no idea about converting the recursive function to non-recursive one. It was quite surprising that someone wrote a function just few days ago but couldn't explain what it does. Yes, it may happen after a long time, say after six months, but less than two weeks? No, that's not natural.</p>
+
+<p>Surprised? Well, don't get surprised. Later it was found that the function was byte-by-byte copied (even including the indentations) from <a href="http://stackoverflow.com/" target="_blank">Stack Overflow</a>.</p>
+
+<p>Honestly, I have no problem in taking help from Stack Overflow or from any other blog, tutorial etc. We all do that. But copy-paste without understanding a bit? I have a big problem with that. In many times the questions and answers in Stack Overflow are very much specific to the original poster's use case. Copying the answer without understanding their cases may lead to a disaster.</p>
+
+<p>Unfortunately, nowadays this behaviour is also not very uncommon. The main issue is not Stack Overflow in particular. Rather the main issue here is our desire to find a quick shortcut solution without going into deep. Who wants to read those thick books or spend hours after hours when you can get a shortcut anyway?</p>
+
+<p>But ... as Euclid said "There is no Royal Road to Geometry" ... there is no shortcut to depth knowledge.</p>
+
+<p>I might be wrong, but to me it seems that we are passing a time of shortcuts. We have Stack Overflow, blogs, video tutorials etc. There are even books which are written in simplest tones without much details as the other good (and thick) books are difficult to read. Yes, I agree that these quick shortcuts are needed to get the job done, but it's not possible to reach above average level without going into deep into related fields. And knowledge doesn't mean only technical knowledge. People may disagree, but I strongly think that technical people should know about other fields (e.g. science, philosophy, history, literature) too, at least at some basic level.</p>
+
+<p>And there is no alternative to reading to acquire depth knowledge. These quick shortcuts are not a replacement of books yet. Ask yourself. What is the last book that you have read from first to last ... not to pass an exam, not to get your job done ... rather just to have some fun? What was the last time that you learnt something just for the sake of learning?</p>
+
+<p>And finally ... if someone asks me what one task should all do then I will answer - <i>read, read all the things you can, read as more as you can</i>.</p>
+
+
