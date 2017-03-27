@@ -17,6 +17,9 @@ The content are expected to host at http://bsadd.org
 
 1. gulp 
 
+# Run 
 
+- cd build
+- serve
 
 
