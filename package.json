@@ -1,0 +1,31 @@
+{
+  "name": "InstantnExporter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "del": "^2.2.2",
+    "eslint": "latest",
+    "eslint-config-airbnb-base": "^11.0.1",
+    "eslint-plugin-exclude-nunjuck-tags": "0.0.2",
+    "eslint-plugin-import": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^3.0.1",
+    "gulp-inject-stringified-html": "^1.0.3",
+    "gulp-jsbeautifier": "^2.1.0",
+    "gulp-nunjucks-render": "git+https://github.com/carlosl/gulp-nunjucks-render.git",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-trim": "^1.0.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-watch": "^4.3.11",
+    "pump": "^1.0.1",
+    "uglify": "^0.1.5"
+  }
+}

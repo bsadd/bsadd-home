@@ -1,0 +1,28 @@
+{% set page_title="BSADD - BUET System Analysis, Design and Development community" %}
+{% set page_description="BUET, System Analysis, Design and Development, System Design" %}
+
+{% extends "base.html" %}
+
+{% block html_body %}
+    <div class="container">
+        {% block main_container_body %}
+            {% include "banner.html" %}
+            {% include "navbar.html" %}
+            <!-- Begin Body -->
+            <div class="container">
+                <div class="row">
+                    <div class="col col-sm-3">
+                        {% block sidebar %}
+                            {% include "sidebar.html" %}
+                        {% endblock %}
+                    </div>
+                    <div class="col col-sm-9">
+                        {% block right_side_content %} {% endblock %}
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}
+
+
