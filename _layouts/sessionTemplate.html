@@ -60,6 +60,42 @@
         {{ page.desc }}
         {% endif %}
         <div class="row">
+          
+          <hr>
+
+          <div>
+            {% if page.guests %}
+            Guest :<br>
+            {% for guest in page.guests %}
+              <a href="{{ guest.link }}">&emsp;&emsp;{{ guest.name }}<br></a>
+              &emsp;&emsp;&emsp;{{ guest.position }}</em><br>
+            {% endfor %}
+          {% endif %}
+          </div>
+    
+          <div>
+          {% if page.hosts %}
+            Host :<br>
+            {% for host in page.hosts %}
+              <a href="{{ host.link }}">&emsp;&emsp;{{ host.name }}<br></a>
+            {% endfor %}
+          {% endif %}
+          </div>
+          
+          <div>
+          {% if page.writers %}
+          <br>
+            Writer :<br>
+            {% for writer in page.writers %}
+              <a href="{{ writer.link }}">&emsp;&emsp;{{ writer.name }}<br></a>
+            {% endfor %}
+          {% endif %}
+          </div>
+          
+          <hr>
+
+        </div>   
+        <div class="row">
           {{ content }}
         </div>
         <hr />

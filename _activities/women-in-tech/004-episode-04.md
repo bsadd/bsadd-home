@@ -11,17 +11,19 @@ youtubeLink: "https://www.youtube.com/embed/JrmA9MqfOiQ"
 guests  :
     - name: Dr. Moushumi Sharmin
       position: Associate Professor, Western Washington University
-      link: "https://www.linkedin.com/in/moushumi-sharmin-287b495/"
+      link: https://www.linkedin.com/in/moushumi-sharmin-287b495/
     - name: Nafisa Anzum
       position: Student, Masters of Mathematics (MMath), David R. Cheriton School of Computer Science, University of Waterloo
-      link: "https://www.linkedin.com/in/nafisa-anzum/"
+      link: https://www.linkedin.com/in/nafisa-anzum/
+hosts:
+    - name: Mahmud Mushfique
+      link: https://www.linkedin.com/in/khandaker-mushfiqur-rahman-4a0593130/
+    - name: Muntaka Ibnath
+      link: https://www.linkedin.com/in/muntaka-ibnath-9371a7188/
+writers:
+    - name: Nazmul Islam Ananto
+      link: https://www.linkedin.com/in/nazmulislamananto/
 ---
-
-***Speaker : Dr. Moushumi Sharmin, Nafisa Anzum***  
-***Host : Mahmud Mushfique, Muntaka Ibnath***  
-***Written by : Nazmul Islam Ananto***
-
-<br>
 
 #### Description of the guest
 

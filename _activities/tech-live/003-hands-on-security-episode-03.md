@@ -11,22 +11,22 @@ youtubeLink: "https://www.youtube.com/embed/0wnGADtNRrU"
 guests  :
     - name: Md. Kawser Habib
       position  : Cyber Security Manager, ECS Lab ltd
-      link: "https://www.linkedin.com/in/khabib97/"
+      link: https://www.linkedin.com/in/khabib97/
     - name: Mahdi Mashrur Matin
       position  : CA manager & Information Security Consultant, ICT Division.
-      link: "https://www.linkedin.com/in/mahdimashrur/"
+      link: https://www.linkedin.com/in/mahdimashrur/
     - name: Sazzadur Rahaman
       position  : Graduate Research Assistant at Virginia Tech
-      link: "https://www.linkedin.com/in/sazzad114/"
+      link: https://www.linkedin.com/in/sazzad114/
+hosts:
+  - name: Shashata Sawmya
+    link: https://www.linkedin.com/in/shashata-sawmya/
+  - name: Mahmud Mushfique
+    link: https://www.linkedin.com/in/khandaker-mushfiqur-rahman-4a0593130/
+writers:
+  - name: Mahdee Mushfique Kamal
+    link: https://www.linkedin.com/in/mmkdhrubo/
 ---
-
-***Speaker : Mahdi Mashrur Matin, Md Kawser Habib, Sazzadur Rahaman***
-
-***Host : Shashata Sawmya, Mahmud Mushfique***
-
-***Written by : Mahdee Mushfique Kamal***
-
-<br>
 
 #### Description of the guest
 

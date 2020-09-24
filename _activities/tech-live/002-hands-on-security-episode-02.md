@@ -11,14 +11,14 @@ youtubeLink: "https://www.youtube.com/embed/CbeUh_huABs"
 guests  :
     - name: Md. Kawser Habib
       position  : Cyber Security Manager, ECS Lab ltd
-      link: "https://www.linkedin.com/in/khabib97/"
+      link: https://www.linkedin.com/in/khabib97/
+hosts:
+  - name: Shashata Sawmya
+    link: https://www.linkedin.com/in/shashata-sawmya/
+writers:
+  - name: Nazmul Islam Ananto
+    link: https://www.linkedin.com/in/nazmulislamananto/
 ---
-
-***Speaker : Md Kawser Habib***  
-***Host : Shashata Sawmya***  
-***Written by : Nazmul Islam Ananto***
-
-<br>
 
 #### Description of the guest
 
